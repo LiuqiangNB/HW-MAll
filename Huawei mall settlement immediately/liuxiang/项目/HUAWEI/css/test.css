@@ -1,0 +1,23 @@
+.nav-underline{
+	text-decoration: none;
+	color: black;
+}
+
+header nav .nav-underline:before{
+	content: "";
+	position: absolute;
+	top: 40px;
+	width: 0;
+	border-bottom: 2px solid red;
+}
+
+header nav .nav-underline:hover:before{
+	width: 8%;
+}
+ a:hover{
+	color: red;
+}
+.a{
+	margin-left: 150px;
+	margin-top: -21px;
+}

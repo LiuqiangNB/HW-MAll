@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<link rel="stylesheet" href="js/Cash-register.css" />
+		<div>
+
+			<div id="app">
+				<!--头部-->
+				<div class="left">
+
+					<div class=" ">
+						<a href="index.html" title="华为商城">
+							<img src="image/Vmall_red.png" alt="华为商城"></a>
+						<span>|</span>
+						<span>{{msg}}</span>
+
+					</div>
+				</div>
+
+			</div>
+
+			<div class="Bottom">
+				<!--第二部分-->
+
+			</div>
+			<div class="one">
+
+				<div class="one0"><img src="image/success_icon.png"></div>
+				<div class="one1">订单提交成功，只差付款了~</div>
+				<div class="one4">订单金额：<span>xxx</span></div>
+				<div class="one2">订单号：<span>14332223</span></div>
+				<div class="one5">订单详情：<span>xxx</span> <button onclick="dian()">点我</button> </div>
+				<div class="one3">请您在<span>xxx</span>完成支付,否则订单将自动取消</div>
+				
+				<div  class="one3" id="yinc" ><span>隐藏内容你购买的玩意也不在服务器</span> </div>
+				
+			</div>
+
+			<div class="fukuange">
+				<!--付款格-->
+				<ul >
+					<li class="COMMONactive" name="common_pay" sort="0" v-on:click="dianji">
+						<a class="active" href="#"  onclick="cy()">
+							常用
+						</a>
+					</li>
+					
+
+					<li class="THIP" name="third_pay" sort="1">
+						<a href="#" name="msg_third_pay" onclick="pt()">
+							平台支付
+						</a>
+					</li>
+
+					<li class="INST" name="hb_pay" sort="2">
+						<a href="#" name="msg_hb_pay" data-toggle="tab" onclick="fq()">
+							分期支付
+						</a>
+					</li>
+
+					<li class="NETB" name="nwchain_pay" sort="10000">
+						<a href="#" name="msg_nwchain_pay" data-toggle="tab" onclick="wy()">
+							网银支付
+						</a>
+					</li>
+					<div class="ptaizhif">
+						<div  id="cy">我是常用</div>
+					<div  id="pt">我是平台支付</div>
+					<div  id="fq">我是分期支付</div>
+					<div id="wy">我是网银支付</div>
+						
+					</div>
+					
+				</ul>
+				
+			</div>
+			
+		</div>
+
+		<script type="text/javascript">
+			
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					msg: '收银台'
+				},
+				
+				methods: { // 算法	
+				}
+			});
+			function dian(){
+				  var x = document.getElementById("yinc");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+			};
+			
+			function cy(){
+				var cy=document.getElementById("cy");
+				var pt=document.getElementById("pt");
+				var fq=document.getElementById("fq");
+				var wy=document.getElementById("wy");
+				 if (cy.style.display == "none") {
+        cy.style.display = "block";
+         pt.style.display = "none";
+        fq.style.display = "none";
+        wy.style.display = "none"; 
+    }else {
+        pt.style.display = "none";
+        fq.style.display = "none";
+        wy.style.display = "none"; 
+    }
+			};
+			
+			function pt(){
+				var cy=document.getElementById("cy");
+				var pt=document.getElementById("pt");
+				var fq=document.getElementById("fq");
+				var wy=document.getElementById("wy");
+				 if (pt.style.display == "none") {
+        pt.style.display = "block";
+        cy.style.display = "none";
+        fq.style.display = "none";
+        wy.style.display = "none";
+        
+    } else {
+        cy.style.display = "none";
+        fq.style.display = "none";
+        wy.style.display = "none";
+        
+    }
+			};
+			
+			function fq(){
+				var cy=document.getElementById("cy");
+				var pt=document.getElementById("pt");
+				var fq=document.getElementById("fq");
+				var wy=document.getElementById("wy");
+				 if (fq.style.display == "none") {
+        fq.style.display = "block";
+          cy.style.display = "none";
+        pt.style.display = "none";
+        wy.style.display = "none";
+        
+    } else {
+        cy.style.display = "none";
+        pt.style.display = "none";
+        wy.style.display = "none";
+         
+    }
+			};
+			
+			function wy(){
+				var cy=document.getElementById("cy");
+				var pt=document.getElementById("pt");
+				var fq=document.getElementById("fq");
+				var wy=document.getElementById("wy");
+				 if (wy.style.display == "none") {
+        wy.style.display = "block";
+         cy.style.display = "none";
+        pt.style.display = "none";
+        fq.style.display = "none";
+    } else {
+        cy.style.display = "none";
+        pt.style.display = "none";
+        fq.style.display = "none";
+    }
+			}
+		</script>
+
+	</body>
+
+</html>
